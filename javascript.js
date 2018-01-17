@@ -19,7 +19,7 @@ let images = [1,1,2,2,3,3,4,4,5,5,6,6,7,7,8,8];
 while (images.length > 0) {
 
   // get a random index from the images array
-  let index = Math.floor(Math.random()*images.length));
+  let index = Math.floor(Math.random() * images.length);
 
   //assign that image to assigning array
   assigning[i].src = 'images/number' + images[index] + '.gif';
@@ -28,13 +28,14 @@ while (images.length > 0) {
   // remove that index from the array
 
   images.splice(i,1);
+  console.log("gucci" + [i])
 }
 }
 
-let starBtn = document.querySelector('button');
+let startBtn = document.querySelector('button');
 
 startBtn.addEventListener('click', function randomImg() {
-  console.log("gucci")
+
 }
 
 );
