@@ -1,0 +1,31 @@
+
+body {
+  display: grid;
+  margin: auto;
+  justify-content: center;
+}
+
+table {
+  border-radius: 2%;
+  border-collapse: separate;
+  border-spacing: 2em;
+  background: #00b7ff;
+  background: linear-gradient(bottom left,#00b7ff,#ffffc7);
+  background: -webkit-linear-gradient(bottom left,#00b7ff,#ffffc7);
+  background: -moz-linear-gradient(bottom left,#00b7ff,#ffffc7);
+}
+
+h2 {
+  position: absolute;
+  margin: auto;
+}
+
+td {
+  color: #333;
+  width: 8em;
+  height: 8em;
+  background-color: #333;
+  border-radius: 10%;
+}
+
+/* On clicking Start, board flips to game */
