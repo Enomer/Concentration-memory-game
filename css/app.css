@@ -5,10 +5,12 @@ body {
   justify-content: center;
 }
 
-table {
+.gameboard {
+  display: grid;
+  grid-column-gap: 20px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  padding: 10px;
   border-radius: 2%;
-  border-collapse: separate;
-  border-spacing: 2em;
   background: #00b7ff;
   background: linear-gradient(bottom left,#00b7ff,#ffffc7);
   background: -webkit-linear-gradient(bottom left,#00b7ff,#ffffc7);
@@ -31,5 +33,9 @@ td {
 img {
   max-width: 100%;
 }
-
-/* On clicking Start, board flips to game */
+.grid-item {
+  border-radius: 10%;
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+}
