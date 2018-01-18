@@ -28,7 +28,7 @@ for (let i = 0; i < remover.length; i++) {
   // let index = Math.floor(Math.random() * imageTags.length);
   // let imageId = document.querySelector('img'+index);
   remover[i].addEventListener('click', function () {
-  imageTags[i].remove(remover[i]);
+  imageTags[i].classList.remove('grey');
 });
 }
 
