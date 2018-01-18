@@ -5,7 +5,7 @@ let assigning = document.getElementsByClassName('assign');
 // the potential images
 let images = [1,1,2,2,3,3,4,4,5,5,6,6,7,7,8,8];
 // continue this until no more potential images
-var i = 0;
+let i = 0;
 while (images.length > 0) {
   // get a random index from the images array
   let index = Math.floor(Math.random() * images.length);
@@ -17,14 +17,29 @@ while (images.length > 0) {
   i++;
 }
 
-let imageTags = document.querySelector('img');
-let numOfGreys = document.querySelectorAll('#gameboard .grey').length;
+
+let imageTags = document.querySelectorAll('img');
 let remover = document.querySelectorAll('.grey');
+// let remover = document.getElementsByClassName("grey");
 let assigned = document.querySelector('.assign');
 
 
 for (let i = 0; i < remover.length; i++) {
+  // let index = Math.floor(Math.random() * imageTags.length);
+  // let imageId = document.querySelector('img'+index);
   remover[i].addEventListener('click', function () {
-      this.classList.remove('grey');
-  });
+  imageTags[i].remove(remover[i]);
+});
 }
+
+// const nodelist = document.querySelectorAll('img');
+// const nodelistToArray = Array.apply(null, nodelist);
+
+// ES 2015 spread const nodelist = [...document.querySelectorAll('img')];
+
+/*
+const arrayify = Array.from(imageTags);
+arrayify.forEach(function(elements) {
+    console.log(elements.src)
+});
+*/
