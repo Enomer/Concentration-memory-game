@@ -8,12 +8,19 @@
   background: linear-gradient(bottom left,#00b7ff,#ffffc7);
   background: -webkit-linear-gradient(bottom left,#00b7ff,#ffffc7);
   background: -moz-linear-gradient(bottom left,#00b7ff,#ffffc7);
-  max-height: 70em;
-  max-width: 60em;
+  max-height: 55em;
+  max-width: 55em;
   margin: auto;
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
 }
 .grid-item {
-  border-radius: 20%;
+  border-radius: 25%;
   padding-top: 15px;
   padding-bottom: 15px;
   margin: auto;
@@ -21,15 +28,101 @@
 img {
   max-width: 85%;
 }
-header {
-  display: flex;
-  flex-flow: wrap;
-  justify-content: space-between;
-  align-items: center;
-}
-.grey {
-    content:url('/images/grey.png');
-}
-main {
 
+.grey {
+  content:url('/images/grey.png');
+}
+h1 {
+  text-align: center;
+}
+#moves {
+  display: inline-block;
+  margin: 0 25px;
+
+}
+.stars {
+  margin: 0;
+  display: inline-block;
+}
+#replay {
+  content:url('/images/Replay.svg');
+  width: 1em;
+  display: inline-block;
+}
+#starsnmoves {
+  text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width : 360px)
+{
+  #moves
+  {
+    font-size: 1.2em !important;
+  }
+}
+@media screen and (min-width : 768px)
+{
+  h1 {
+    font-size: 3em;
+  }
+  #moves
+  {
+    font-size: 1.3em;
+  }
+  #replay {
+    width: 1.3em;
+  }
+  .stars {
+    width: 1.6em;
+  }
+}
+@media screen and (min-width : 1040px)
+{
+  h1 {
+    font-size: 3.5em;
+  }
+  #moves
+  {
+    font-size: 1.6em;
+  }
+  #replay {
+    width: 1.3em;
+  }
+  .stars {
+    width: 1em;
+  }
 }
