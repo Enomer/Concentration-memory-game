@@ -42,7 +42,7 @@ h1 {
 }
 .stars {
   margin: 0;
-  display: inline-block;
+
 }
 #replay {
   content:url('/images/Replay.svg');
@@ -55,13 +55,28 @@ h1 {
 
 
 
+#Layer_1-2 {
+  fill: #333;
+}
 
+#innerStar{
+  fill: #333;
+}
 
+#Layer_1-3 {
+  fill: #333;
+}
 
+#innerStar1{
+  fill: #333;
+}
+#Layer_1-4 {
+  fill: #333;
+}
 
-
-
-
+#innerStar2{
+  fill: #333;
+}
 
 
 
