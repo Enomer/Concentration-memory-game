@@ -11,7 +11,7 @@ The game features a star rating, you may recieve a final rating of 1, 2, or 3 st
 you finish the game. 1 star is 25 moves or more, 2 stars is 17 -24 moves and 3 stars is anything below that. 
 You may replay the game upon seeing your final score.
 
-## Dependancies**
+## Dependancies
 There are no dependancies to play this game. Should be fully accessible to all internet users.
 ## Built With
 
