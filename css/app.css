@@ -30,7 +30,7 @@ img {
 }
 
 .grey {
-  content:url('/images/grey.png');
+  content: url('https://i.imgur.com/qxyII9X.png');
 }
 h1 {
   text-align: center;
@@ -45,7 +45,7 @@ h1 {
 
 }
 #replay {
-  content:url('/images/Replay.svg');
+  content: url('https://svgshare.com/i/58L.svg');
   width: 1em;
   display: inline-block;
 }

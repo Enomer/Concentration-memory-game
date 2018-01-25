@@ -65,7 +65,6 @@ function shuffleDeck() {
     let index = Math.floor(Math.random() * images.length);
     //assign that image to assigning array(images all numbered number1-8)
     assigning[i].src = 'images/number' + images[index] + '.gif';
-    assigning[i].alt = assigning[i].src;
     // remove that index from the array
     images.splice(index,1);
     i++;
