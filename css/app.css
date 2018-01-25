@@ -12,12 +12,12 @@
   max-width: 55em;
   margin: auto;
   -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-     -khtml-user-select: none; /* Konqueror HTML */
-       -moz-user-select: none; /* Firefox */
-        -ms-user-select: none; /* Internet Explorer/Edge */
-            user-select: none; /* Non-prefixed version, currently
-                                  supported by Chrome and Opera */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+  supported by Chrome and Opera */
 }
 .grid-item {
   border-radius: 25%;
@@ -77,30 +77,38 @@ h1 {
 #innerStar2{
   fill: #333;
 }
+h2 {
+  text-align: center;
+  font-family: Dosis;
+  font-size: 2em;
+  animation-duration: 1s;
+  animation-delay: 2s;
+}
+#logo {
+  display:block;
+  position: relative;
+  margin: auto;
+  width: 448px;
+}
+
+#moves {
+  font-family: Dosis;
+}
+
+#starsnmoves {
+  animation-duration: 1s;
+  animation-delay: 2s;
+}
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+@media screen and (min-width : 551px)
+{
+  text {
+    font-size: 4.8em;
+  }
+}
 
 @media screen and (max-width : 360px)
 {
@@ -139,5 +147,16 @@ h1 {
   }
   .stars {
     width: 1em;
+  }
+}
+@media screen and (max-width : 550px)
+{
+  #logo
+  {
+    width: 280px;
+  }
+  text
+  {
+    font-size: 2.7em !important;
   }
 }

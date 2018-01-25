@@ -2,7 +2,7 @@ let assigning = document.getElementsByClassName('assign');
 let numofMoves = 0; //keeps track of how many clicks on a panel
 const moveDiv = document.getElementById('moves'); // for numofMoves
 const gameBoard = document.querySelector('.gameboard'); // for prada3 function
-const headingItems = document.querySelector('header');
+const headingItems = document.querySelector('#starsnmoves');
 let n = 2; // keeps track of which event phase the function prada3 is on
 let firstClick; //firstClick's event target information needs to change dynamically
 let secondClick; //secondClick same as firstClick
@@ -14,7 +14,45 @@ let animFirst; // this will add the animated class from animated.css plugin to t
 let flipFirst; // this will add the flip to firstClick
 let animSecond; // this will add the animated class from animated.css plugin to the SecondClick event.target.classList
 let flipSecond; // this swill add the flip to secondClick
+let seconds = 0, minutes = 0, hours = 0;
+let node;
+let t;
+
 function gucci6(){replayBtn.classList.remove('rotateIn');} //delays the removal so animation can complete
+function gucci5(logoTitle, sizing) { //Plays out animated header with whateevr font size is input
+  let o = document.getElementById("logo").querySelectorAll("text");
+  if (o.length > 0) {
+    o[0].remove();
+  }
+  let l = Snap('#logo'); //uses snap.svg to generate a snap on logo id
+  setTimeout( function() {
+    //let logoTitle = 'Concentration!';
+    let logoRandom = '';
+    let logoTitleContainer = l.text(0, '75%', );
+    let possible = "-+/|}-_(*&^%$#){[]~\\\":;?^%$#){[]/.*><=+@!)}";
+    logoTitleContainer.attr({
+      fontSize: sizing,
+      fontFamily: 'Dosis',
+      fontWeight: '600'
+    });
+
+    function generateRandomTitle(i, logoRandom) {
+      setTimeout( function() {
+        logoTitleContainer.attr({ text: logoRandom });
+      }, i*70 );
+    }
+
+    for( let i=0; i < logoTitle.length+1; i++ ) { // nested for loop to randomly select digits which change before concentration text
+      logoRandom = logoTitle.substr(0, i);
+      for( let j=i; j < logoTitle.length; j++ ) {
+        logoRandom += possible.charAt(Math.floor(Math.random() * possible.length));
+      }
+      generateRandomTitle(i, logoRandom);
+      logoRandom = '';
+    }
+  }, 500 );
+}
+
 
 // the game randomly shuffles the cards
 function shuffleDeck() {
@@ -37,13 +75,33 @@ function shuffleDeck() {
   star3.style.fill = "#333";
   star2.style.fill = "#333";
   gameboard.style.display = "grid";
-  headingItems.style.display = "block";
   success=0;
   star3.classList.remove('bounceOut');
   star2.classList.remove('bounceOut');
   setTimeout(gucci6, 800);
 }
-document.onload = shuffleDeck();
+
+function add() { // add the amount of time
+  node = document.createElement('h2');
+  node.setAttribute("id", "timer");
+  node.classList.add('animated');
+  node.classList.add('fadeIn');
+  seconds++;
+  if (seconds >= 60) {
+    seconds = 0;
+    minutes++;
+    if (minutes >= 60) {
+      minutes = 0;
+      hours++;
+    }
+  }
+  node.textContent = 'Completion Time: ' + (hours ? (hours > 9 ? hours : "0" + hours) : "00") + ":" + (minutes ? (minutes > 9 ? minutes : "0" + minutes) : "00") + ":" + (seconds > 9 ? seconds : "0" + seconds);
+  timer();
+}
+function timer() {
+  t = setTimeout(add, 1000);
+}
+
 
 // function which keeps track of the number of clicks the player has made
 function addMove() {
@@ -51,28 +109,43 @@ function addMove() {
   moveDiv.innerHTML = numofMoves + " Moves";
 }
 function starRating() {
-    if (numofMoves === 18) {
+  if (numofMoves === 15) {
     star3.classList.add('bounceOut');
   }
-  else if (numofMoves === 24) {
+  else if (numofMoves === 20) {
     star2.classList.add('bounceOut');
+  }
+  else if (numofMoves > 25) {
+    star1.classList.add('bounceOut');
   }
 }
 
 function youWin(){
   if (success === 8){ // This will mark the completion of the game
     gameboard.style.display = "none";
-    headingItems.style.display = "none";
+    document.body.appendChild(node); // Add the time to the end screen
+    gucci5('Congratulations!','4.3em');
   }
 }
 
+
 // This will make it so if two pairs of images are out on the field, there classes will add grey back to them if replay is clicked
 function checkGrey() {
+  seconds = 0;
+  minutes = 0;
+  hours = 0;
+  gucci5('Concentration!', '4.8em');
+  if (success === 8) {
+    //  let replaceText = document.getElementById('logo').children;
+    document.getElementById('timer').remove(); // removes the timer
+  }
   n=2;
   for (let z=1;z < 17; z++) {
     let imgNum = document.getElementById('img' + [z]);
     if (imgNum.classList.contains('grey') === false) {
-        imgNum.classList.add('grey');
+      imgNum.classList.add('grey');
+      imgNum.classList.remove('animated');
+      imgNum.classList.remove('rubberBand');
     }
   }
 }
@@ -133,7 +206,6 @@ function prada3(event){
   }
 }
 
-
 gameBoard.addEventListener('click', prada3); //take the above function and apply it to happen when a click is done
 replayBtn.addEventListener('click', function(){
   replayBtn.classList.add('rotateIn');
@@ -142,25 +214,8 @@ replayBtn.addEventListener('click', shuffleDeck); // replay button shuffles the 
 
 
 
-
-
-
-// Older strategies which didnt work
-
-// let assigned = document.querySelector('.assign');
-// let remover = document.querySelectorAll('.grey');
-// let remover = document.getElementsByClassName("grey");
-// let imageTags = document.querySelectorAll('img');
-// const nodelist = document.querySelectorAll('img');
-// const nodelistToArray = Array.apply(null, nodelist);
-// ES 2015 spread const nodelist = [...document.querySelectorAll('img')];
-/* const arrayify = Array.from(imageTags);
-arrayify.forEach(function(elements) {
-console.log(elements.src)
-}); */
-// let card1Array = assigning[0].src.split("/");
-// let card1 = card1Array[card1Array.length -1];
-/*  gucci = event.srcElement.src;
-gucci1 = gucci.split("/");
-gucci2 = gucci1[gucci1.length -1];
-*/
+timer();
+document.onload = shuffleDeck();
+window.onload = function() {
+  gucci5('Concentration!', '4.8em');
+}

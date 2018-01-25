@@ -8,13 +8,16 @@
   <title>Concentration Memory Game</title>
   <link rel="stylesheet"
  href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+<link href='//fonts.googleapis.com/css?family=Dosis:400,600' rel='stylesheet' type='text/css'>
 </head>
-<body>
+<body id='bigBoy'>
   <header id="header">
-
-    <h1>Concentration!</h1>
-    <div id="starsnmoves">
-      <svg id="star1" width="1.3em" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 115.46 110.34"><defs><style>.cls-1{fill:#222;}</style></defs><title>Asset 1</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><polygon id="innerStar" class="cls-1" points="57.07 86.53 26.47 102.05 32.77 68.32 8.55 44.01 42.58 39.58 58.22 9.04 72.95 40.03 106.83 45.47 81.9 69.05 87.2 102.95 57.07 86.53"/><path d="M58.09,18.07,68.43,39.85l1.81,3.79,4.15.67,23.8,3.82L80.68,64.7l-3.05,2.89.65,4.15L82,95.56,60.83,84l-3.69-2-3.75,1.9-21.5,10.9,4.42-23.7L37.08,67l-3-3-17-17.08L41,43.82l4.17-.55,1.92-3.74,11-21.46M58.35,0,40,35.88,0,41.09,28.45,69.65l-7.4,39.63L57,91.05l35.41,19.29L86.18,70.51,115.46,42.8l-39.8-6.39L58.35,0Z"/></g></g></svg>
+    <div id="container">
+<svg xmlns="http://www.w3.org/2000/svg" id="logo">
+  <path fill="none" d=""/>
+</svg>
+    <div id="starsnmoves" class="animated fadeIn">
+      <svg id="star1" width="1.3em" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 115.46 110.34"><defs><style>.cls-1{fill:#222;}</style></defs><title>Asset 1</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><polygon id="innerStar" class="cls-1 animated" points="57.07 86.53 26.47 102.05 32.77 68.32 8.55 44.01 42.58 39.58 58.22 9.04 72.95 40.03 106.83 45.47 81.9 69.05 87.2 102.95 57.07 86.53"/><path d="M58.09,18.07,68.43,39.85l1.81,3.79,4.15.67,23.8,3.82L80.68,64.7l-3.05,2.89.65,4.15L82,95.56,60.83,84l-3.69-2-3.75,1.9-21.5,10.9,4.42-23.7L37.08,67l-3-3-17-17.08L41,43.82l4.17-.55,1.92-3.74,11-21.46M58.35,0,40,35.88,0,41.09,28.45,69.65l-7.4,39.63L57,91.05l35.41,19.29L86.18,70.51,115.46,42.8l-39.8-6.39L58.35,0Z"/></g></g></svg>
       <svg id="star2" width="1.3em" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 115.46 110.34"><defs><style>.cls-1{fill:#222;}</style></defs><title>Asset 1</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-3" data-name="Layer 1"><polygon id="innerStar1" class="cls-1 animated" points="57.07 86.53 26.47 102.05 32.77 68.32 8.55 44.01 42.58 39.58 58.22 9.04 72.95 40.03 106.83 45.47 81.9 69.05 87.2 102.95 57.07 86.53"/><path d="M58.09,18.07,68.43,39.85l1.81,3.79,4.15.67,23.8,3.82L80.68,64.7l-3.05,2.89.65,4.15L82,95.56,60.83,84l-3.69-2-3.75,1.9-21.5,10.9,4.42-23.7L37.08,67l-3-3-17-17.08L41,43.82l4.17-.55,1.92-3.74,11-21.46M58.35,0,40,35.88,0,41.09,28.45,69.65l-7.4,39.63L57,91.05l35.41,19.29L86.18,70.51,115.46,42.8l-39.8-6.39L58.35,0Z"/></g></g></svg>
       <svg id="star3" width="1.3em" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 115.46 110.34"><defs><style>.cls-1{fill:#222;}</style></defs><title>Asset 1</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-4" data-name="Layer 1"><polygon id="innerStar2" class="cls-1 animated" points="57.07 86.53 26.47 102.05 32.77 68.32 8.55 44.01 42.58 39.58 58.22 9.04 72.95 40.03 106.83 45.47 81.9 69.05 87.2 102.95 57.07 86.53"/><path d="M58.09,18.07,68.43,39.85l1.81,3.79,4.15.67,23.8,3.82L80.68,64.7l-3.05,2.89.65,4.15L82,95.56,60.83,84l-3.69-2-3.75,1.9-21.5,10.9,4.42-23.7L37.08,67l-3-3-17-17.08L41,43.82l4.17-.55,1.92-3.74,11-21.46M58.35,0,40,35.88,0,41.09,28.45,69.65l-7.4,39.63L57,91.05l35.41,19.29L86.18,70.51,115.46,42.8l-39.8-6.39L58.35,0Z"/></g></g></svg>
       <div id="moves">0 Moves</div>
@@ -42,5 +45,6 @@
     </div>
   </main>
   <script src="javascript.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/snap.svg/0.4.1/snap.svg-min.js"></script>
 </body>
 </html>
