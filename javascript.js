@@ -15,8 +15,9 @@ let flipFirst; // this will add the flip to firstClick
 let animSecond; // this will add the animated class from animated.css plugin to the SecondClick event.target.classList
 let flipSecond; // this swill add the flip to secondClick
 let seconds = 0, minutes = 0, hours = 0;
+let isClicked = false; // starts the timer
 let node;
-let t;
+let nIntervId; // this will stop the timer when you win
 
 function gucci6(){replayBtn.classList.remove('rotateIn');} //delays the removal so animation can complete
 function gucci5(logoTitle, sizing) { //Plays out animated header with whateevr font size is input
@@ -80,26 +81,7 @@ function shuffleDeck() {
   setTimeout(gucci6, 800);
 }
 
-function add() { // add the amount of time
-  node = document.createElement('h2');
-  node.setAttribute("id", "timer");
-  node.classList.add('animated');
-  node.classList.add('fadeIn');
-  seconds++;
-  if (seconds >= 60) {
-    seconds = 0;
-    minutes++;
-    if (minutes >= 60) {
-      minutes = 0;
-      hours++;
-    }
-  }
-  node.textContent = 'Completion Time: ' + (hours ? (hours > 9 ? hours : "0" + hours) : "00") + ":" + (minutes ? (minutes > 9 ? minutes : "0" + minutes) : "00") + ":" + (seconds > 9 ? seconds : "0" + seconds);
-  timer();
-}
-function timer() {
-  t = setTimeout(add, 1000);
-}
+
 
 
 // function which keeps track of the number of clicks the player has made
@@ -121,8 +103,9 @@ function starRating() {
 
 function youWin(){
   if (success === 8){ // This will mark the completion of the game
+    clearInterval(nIntervId);
+    isClicked = false;
     gameboard.style.display = "none";
-    document.body.appendChild(node); // Add the time to the end screen
     gucci5('Congratulations!','4.3em');
   }
 }
@@ -133,6 +116,7 @@ function checkGrey() {
   seconds = 0;
   minutes = 0;
   hours = 0;
+  createTimer();
   gucci5('Concentration!', '4.8em');
   if (success === 8) {
     //  let replaceText = document.getElementById('logo').children;
@@ -211,10 +195,47 @@ replayBtn.addEventListener('click', function(){
 })
 replayBtn.addEventListener('click', shuffleDeck); // replay button shuffles the deck
 
+function createTimer() {
+node = document.createElement('h2');
+node.setAttribute("id", "timer");
+node.classList.add('animated');
+node.classList.add('fadeIn');
+headingItems.appendChild(node);
+node.textContent = 'Time elapsed: ' + (hours ? (hours > 9 ? hours : "0" + hours) : "00") + ":" + (minutes ? (minutes > 9 ? minutes : "0" + minutes) : "00") + ":" + (seconds > 9 ? seconds : "0" + seconds);
+}
+
+function add() { // add the amount of time
+  seconds++;
+  if (seconds >= 60) {
+    seconds = 0;
+    minutes++;
+    if (minutes >= 60) {
+      minutes = 0;
+      hours++;
+    }
+  }
+  node.textContent = 'Time elapsed: ' + (hours ? (hours > 9 ? hours : "0" + hours) : "00") + ":" + (minutes ? (minutes > 9 ? minutes : "0" + minutes) : "00") + ":" + (seconds > 9 ? seconds : "0" + seconds);
+}
+
+Array.from(assigning).forEach(function(element) {
+  element.addEventListener('click', function() {
+    if (isClicked === false) {
+      isClicked = true;
+      nIntervId = setInterval(function timer() {
+        add();
+      }, 1000);
+    }
+  });
+});
 
 
-timer();
+
+
+
+
+
 document.onload = shuffleDeck();
 window.onload = function() {
   gucci5('Concentration!', '4.8em');
+  createTimer();
 }
