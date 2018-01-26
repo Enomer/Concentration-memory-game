@@ -113,6 +113,9 @@ function youWin(){
 
 // This will make it so if two pairs of images are out on the field, there classes will add grey back to them if replay is clicked
 function checkGrey() {
+  node.remove();
+  clearInterval(nIntervId);
+  isClicked = false;
   seconds = 0;
   minutes = 0;
   hours = 0;
