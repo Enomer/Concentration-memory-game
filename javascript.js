@@ -121,10 +121,6 @@ function checkGrey() {
   hours = 0;
   createTimer();
   gucci5('Concentration!', '4.8em');
-  if (success === 8) {
-    //  let replaceText = document.getElementById('logo').children;
-    document.getElementById('timer').remove(); // removes the timer
-  }
   n=2;
   for (let z=1;z < 17; z++) {
     let imgNum = document.getElementById('img' + [z]);
@@ -230,10 +226,6 @@ Array.from(assigning).forEach(function(element) {
     }
   });
 });
-
-
-
-
 
 
 
