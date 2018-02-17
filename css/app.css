@@ -18,6 +18,7 @@
   -ms-user-select: none; /* Internet Explorer/Edge */
   user-select: none; /* Non-prefixed version, currently
   supported by Chrome and Opera */
+  filter: drop-shadow(10px 10px 24px #00b7ff);
 }
 .grid-item {
   border-radius: 25%;
@@ -27,6 +28,7 @@
 }
 img {
   max-width: 85%;
+  cursor: pointer;
 }
 
 .grey {
@@ -45,9 +47,12 @@ h1 {
 
 }
 #replay {
-  content: url('https://svgshare.com/i/58L.svg');
-  width: 1em;
+  background-image: url('../images/Replay.svg');
+  width: 1.3em;
+  height: 1.1em;
   display: inline-block;
+  background-repeat: no-repeat;
+  margin-top: .2em;
 }
 #starsnmoves {
   text-align: center;
